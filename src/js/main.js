@@ -2,12 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithPopup, TwitterAuthProvider } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCoR1FGtRhfHG_IeYvZKgYJdRhxfEqiOdc",
-    authDomain: "cewf-id.firebaseapp.com",
-    projectId: "cewf-id",
-    storageBucket: "cewf-id.appspot.com",
-    messagingSenderId: "399762600225",
-    appId: "1:399762600225:web:9b21abc20016f5f2280e60"
+    /* your config */ 
 };
 initializeApp(firebaseConfig);
 const provider = new TwitterAuthProvider();
@@ -45,10 +40,6 @@ function startAuth() {
 
 auth.onAuthStateChanged(async function (user) {
     if (user) {
-        var displayName = user.displayName;
-        var email = user.email;
-        var photoURL = user.photoURL;
-        var uid = user.uid;
         signin_button.style.display = "none";
         signout_button.style.display = "block";
         user_data_log.textContent = JSON.stringify(user);

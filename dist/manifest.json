@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "Chrome Extension Twitter Auth",
+    "description": "",
+    "version": "1.0.0",
+    "browser_action": {
+      "default_popup": "credentials.html"
+    },
+    "content_security_policy": "script-src 'self' https://apis.google.com/; object-src 'self'"
+  }
+  
+  

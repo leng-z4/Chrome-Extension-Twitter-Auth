@@ -14102,7 +14102,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const firebaseConfig = {
-    /* your config */ 
+    apiKey: "AIzaSyCoR1FGtRhfHG_IeYvZKgYJdRhxfEqiOdc",
+    authDomain: "cewf-id.firebaseapp.com",
+    projectId: "cewf-id",
+    storageBucket: "cewf-id.appspot.com",
+    messagingSenderId: "399762600225",
+    appId: "1:399762600225:web:9b21abc20016f5f2280e60"
 };
 (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(firebaseConfig);
 const provider = new firebase_auth__WEBPACK_IMPORTED_MODULE_1__.TwitterAuthProvider();
@@ -14130,6 +14135,7 @@ function SiginOut() {
 }
 
 function startAuth() {
+    console.log(provider);
     (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signInWithPopup)(auth, provider)
     .then(userCredential => {
         console.log(userCredential.user);
@@ -14148,6 +14154,7 @@ auth.onAuthStateChanged(async function (user) {
         signout_button.style.display = "none";
         user_data.textContent = '';
     }
+    console.log(user);
 });
 signin_button.addEventListener('click', SignIn, false);
 signout_button.addEventListener('click', SiginOut);
